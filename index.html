@@ -8,31 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles.css">
     <style>
-    #services-scroll {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        overflow-x: auto !important;
-        position: relative;
-        cursor: grab;
+    /* Hide numbers from carousel indicators */
+    .carousel-indicators [data-bs-target]::before {
+        content: '' !important;
     }
-    #services-scroll::-webkit-scrollbar {
-        display: none;
+    .carousel-indicators li {
+        color: transparent !important;
     }
-    #services-scroll .services-inner {
-        display: flex;
-        gap: 1.5rem;
-        width: max-content;
-        animation: scroll-left 18s linear infinite;
-        will-change: transform;
-    }
-    #services-scroll:hover .services-inner,
-    #services-scroll:active .services-inner,
-    #services-scroll:focus .services-inner {
-        animation-play-state: paused;
-    }
-    @keyframes scroll-left {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+    /* Remove old services-scroll styles */
+    #services-scroll, #services-scroll::-webkit-scrollbar, #services-scroll .services-inner, #services-scroll:hover .services-inner, #services-scroll:active .services-inner, #services-scroll:focus .services-inner {
+        all: unset;
     }
     </style>
     <!-- Font Awesome -->
@@ -75,40 +60,35 @@
         </section>
         <section class="services-overview container my-4">
             <h2 class="mb-4">Our Services</h2>
-            <div class="d-flex align-items-center position-relative">
-                <div class="services-list w-100 py-2" id="services-scroll" tabindex="0" style="overflow-x:auto;">
-                    <div class="services-inner d-flex flex-nowrap gap-4">
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
+            <div id="servicesCarousel" class="carousel slide bg-dark rounded" data-bs-ride="carousel" style="height:320px; min-height:260px;">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-label="Oil Change"></li>
+                    <li data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Detailing"></li>
+                    <li data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Tires & Alignment"></li>
+                    <li data-bs-target="#servicesCarousel" data-bs-slide-to="3" aria-label="Repairs"></li>
+                </ol>
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center h-100 w-100 text-center">
+                            <i class="fas fa-oil-can fa-4x mb-3" aria-hidden="true"></i>
                             <h3 class="h5">Oil Change</h3>
                         </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center h-100 w-100 text-center">
+                            <i class="fas fa-car-side fa-4x mb-3" aria-hidden="true"></i>
                             <h3 class="h5">Detailing</h3>
                         </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center h-100 w-100 text-center">
+                            <i class="fas fa-tire fa-4x mb-3" aria-hidden="true"></i>
                             <h3 class="h5">Tires & Alignment</h3>
                         </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Repairs</h3>
-                        </div>
-                        <!-- Duplicate for seamless loop -->
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Oil Change</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Detailing</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Tires & Alignment</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
+                    </div>
+                    <div class="carousel-item h-100">
+                        <div class="d-flex flex-column align-items-center justify-content-center h-100 w-100 text-center">
+                            <i class="fas fa-tools fa-4x mb-3" aria-hidden="true"></i>
                             <h3 class="h5">Repairs</h3>
                         </div>
                     </div>
@@ -174,17 +154,11 @@
         <!-- Bootstrap 5 JS Bundle (with Popper) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script>
+        // Set carousel to auto-slide every 2 seconds
         document.addEventListener('DOMContentLoaded', function() {
-            var scrollContainer = document.getElementById('services-scroll');
-            var btnLeft = document.getElementById('services-scroll-left');
-            var btnRight = document.getElementById('services-scroll-right');
-            if (scrollContainer && btnLeft && btnRight) {
-                btnLeft.addEventListener('click', function() {
-                    scrollContainer.scrollBy({ left: -200, behavior: 'smooth' });
-                });
-                btnRight.addEventListener('click', function() {
-                    scrollContainer.scrollBy({ left: 200, behavior: 'smooth' });
-                });
+            var carousel = document.getElementById('servicesCarousel');
+            if (carousel) {
+                var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel, { interval: 2000, ride: 'carousel' });
             }
         });
         </script>
