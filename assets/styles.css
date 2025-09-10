@@ -1,3 +1,40 @@
+@media (max-width: 576px) {
+    /* ...existing code... */
+    .footer-links > div {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .footer-links a {
+        margin: 0 !important;
+        padding: 0.25rem 0 !important;
+        display: block;
+    }
+}
+/* Responsive footer styles */
+@media (max-width: 576px) {
+    .footer-top {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        text-align: center;
+    }
+    .footer-links {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        margin-top: 1rem;
+    }
+    .footer-social {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .footer-links > div {
+        margin-bottom: 0.5rem;
+    }
+    .footer-icons {
+        justify-content: center !important;
+    }
+}
 /* Custom 2s fade for Bootstrap carousel */
 .carousel.carousel-fade .carousel-item {
     transition-property: opacity;
