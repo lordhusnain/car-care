@@ -1,3 +1,8 @@
+/* Reduce hero carousel image height to half */
+.hero-img-half {
+    max-height: 480px;
+    object-fit: cover;
+}
 /* Section underline for headings */
 .section-underline {
     width: 80px;

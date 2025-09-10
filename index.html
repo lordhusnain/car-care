@@ -65,12 +65,42 @@
             </ul>
         </nav>
     </header>
-        <section class="hero container-fluid px-0">
-            <img src="assets/garage-hero.jpg" alt="Garage Hero" class="hero-img w-100">
-            <div class="hero-content">
-                <h1>Your Trusted Car Care Garage</h1>
-                <p>Expert service, honest advice, and unbeatable value.</p>
-                <a href="contact.html#booking" class="btn">Book Now</a>
+        <section class=" container-fluid px-0">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/hero-1.jpg" class="d-block w-100 hero-img-half" alt="Hero Slide 1">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
+                            <h1>Your Trusted Car Care Garage</h1>
+                            <p>Expert service, honest advice, and unbeatable value.</p>
+                            <a href="contact.html#booking" class="btn btn-warning">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/hero-2.jpg" class="d-block w-100 hero-img-half" alt="Hero Slide 2">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
+                            <h1>Modern Equipment & Certified Technicians</h1>
+                            <p>We keep your car running at its best.</p>
+                            <a href="services.html" class="btn btn-warning">Our Services</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/hero-3.jpg" class="d-block w-100 hero-img-half" alt="Hero Slide 3">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4">
+                            <h1>Customer Satisfaction Guaranteed</h1>
+                            <p>Experience the difference at Car Care Garage.</p>
+                            <a href="about.html" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </section>
         <section class="services-overview container my-4">
