@@ -1,3 +1,15 @@
+/* Section underline for headings */
+.section-underline {
+    width: 80px;
+    height: 5px;
+    background: #ffb300;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+}
+/* Section Heading Custom Style (generic for all headings) */
+.section-heading {
+    color: #fff;
+}
 /* Submenu bar hidden by default, shown on nav-item hover */
 .submenu-bar {
     display: none !important;
