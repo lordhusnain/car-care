@@ -1,3 +1,65 @@
+/* Custom dropdown menu for main nav (autopro.ae style) */
+.main-nav .dropdown-parent {
+    position: relative;
+}
+.main-nav .dropdown-toggle::after {
+    content: '\25BC';
+    font-size: 0.6em;
+    margin-left: 0.4em;
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+.main-nav .dropdown-parent:hover .dropdown-toggle::after,
+.main-nav .dropdown-parent:focus-within .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+.main-nav .custom-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 220px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+.main-nav .dropdown-parent:hover .custom-dropdown,
+.main-nav .dropdown-parent:focus-within .custom-dropdown {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.main-nav .custom-dropdown .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    color: #222c3a;
+    text-decoration: none;
+    font-weight: 600;
+    border-left: 3px solid transparent;
+    background: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.main-nav .custom-dropdown .dropdown-item:hover,
+.main-nav .custom-dropdown .dropdown-item:focus {
+    background: #f7f7f7;
+    border-left: 3px solid #ff6600;
+    color: #ff6600;
+}
+@media (max-width: 991px) {
+    .main-nav .custom-dropdown {
+        left: 50%;
+        transform: translate(-50%, 10px);
+        min-width: 180px;
+    }
+}
 @media (max-width: 576px) {
     /* ...existing code... */
     .footer-links > div {

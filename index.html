@@ -45,20 +45,17 @@
     <header class="container-fluid px-0">
         <nav class="d-flex justify-content-between align-items-center px-3 py-2">
             <a href="index.html" class="logo d-flex align-items-center"><img src="assets/al-ghani-logo.png" alt="Al Ghani Car Care Centre Logo" style="height:56px; width:auto; display:block;" /></a>
-            <ul class="d-flex align-items-center mb-0" style="list-style:none; gap:1.5rem;">
+            <ul class="d-flex align-items-center mb-0 main-nav" style="list-style:none; gap:1.5rem;">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li class="nav-item position-relative">
-                    <a href="services.html">Services</a>
-                    <div class="submenu-bar">
-                        <div class="submenu-parent">SERVICES</div>
-                        <div class="submenu-links">
-                            <a href="services/mechanical-repairs.html">Mechanical & Repairs</a>
-                            <a href="services/detailing.html">Car Detailing</a>
-                            <a href="services/oil-fluids.html">Oil & Fluids</a>
-                            <a href="services/tires-alignment.html">Tires & Alignment</a>
-                            <a href="services/paint-bodywork.html">Paint & Bodywork</a>
-                        </div>
+                <li class="nav-item dropdown-parent position-relative">
+                    <a href="services.html" class="dropdown-toggle" id="servicesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu custom-dropdown" aria-labelledby="servicesDropdown">
+                        <a class="dropdown-item" href="services/mechanical-repairs.html">Mechanical & Repairs</a>
+                        <a class="dropdown-item" href="services/detailing.html">Car Detailing</a>
+                        <a class="dropdown-item" href="services/oil-fluids.html">Oil & Fluids</a>
+                        <a class="dropdown-item" href="services/tires-alignment.html">Tires & Alignment</a>
+                        <a class="dropdown-item" href="services/paint-bodywork.html">Paint & Bodywork</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
