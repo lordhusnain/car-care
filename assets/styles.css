@@ -1,3 +1,9 @@
+/* Custom 2s fade for Bootstrap carousel */
+.carousel.carousel-fade .carousel-item {
+    transition-property: opacity;
+    transition-duration: 2.5s;
+    transition-timing-function: ease-in-out;
+}
 /* Reduce hero carousel image height to half */
 .hero-img-half {
     max-height: 480px;
