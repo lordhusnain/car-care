@@ -59,9 +59,13 @@ html, body {
 }
 @media (max-width: 991px) {
     .main-nav .custom-dropdown {
-        left: 50%;
-        transform: translate(-50%, 10px);
+        left: 0;
+        right: 0;
         min-width: 180px;
+        width: 100vw;
+        max-width: 320px;
+        margin: 0 auto;
+        transform: translateY(10px);
     }
 }
 @media (max-width: 576px) {
