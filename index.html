@@ -7,34 +7,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles.css">
-    <style>
-    #services-scroll {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        overflow-x: auto !important;
-        position: relative;
-        cursor: grab;
-    }
-    #services-scroll::-webkit-scrollbar {
-        display: none;
-    }
-    #services-scroll .services-inner {
-        display: flex;
-        gap: 1.5rem;
-        width: max-content;
-        animation: scroll-left 18s linear infinite;
-        will-change: transform;
-    }
-    #services-scroll:hover .services-inner,
-    #services-scroll:active .services-inner,
-    #services-scroll:focus .services-inner {
-        animation-play-state: paused;
-    }
-    @keyframes scroll-left {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-    </style>
+   
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,41 +76,62 @@
         <section class="services-overview container my-4">
             <h2 class="fw-bold display-6 mb-2 section-heading text-center">Our Services</h2>
             <div class="section-underline mx-auto mb-4"></div>
-            <div class="d-flex align-items-center position-relative">
-                <div class="services-list w-100 py-2" id="services-scroll" tabindex="0" style="overflow-x:auto;">
-                    <div class="services-inner d-flex flex-nowrap gap-4">
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Oil Change</h3>
+            <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center g-4">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Oil Change</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Detailing</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Tires & Alignment</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Repairs</h3>
+                                </div>
+                            </div>
                         </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Detailing</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Tires & Alignment</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Repairs</h3>
-                        </div>
-                        <!-- Duplicate for seamless loop -->
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Oil Change</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Detailing</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Tires & Alignment</h3>
-                        </div>
-                        <div class="service-item flex-shrink-0 text-center" style="width:180px;">
-                            <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
-                            <h3 class="h5">Repairs</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center g-4">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-oil-can fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Oil Change</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-car-side fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Detailing</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-tire fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Tires & Alignment</h3>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="service-item text-center">
+                                    <i class="fas fa-tools fa-3x mb-2" aria-hidden="true"></i>
+                                    <h3 class="h5">Repairs</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
